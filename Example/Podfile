@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'SFMacro_Example' do
+  pod 'SFMacro', :path => '../'
+
+  target 'SFMacro_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
