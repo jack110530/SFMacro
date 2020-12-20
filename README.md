@@ -27,3 +27,4 @@ jack110530, jack110530@163.com
 ## License
 
 SFMacro is available under the MIT license. See the LICENSE file for more info.
+
