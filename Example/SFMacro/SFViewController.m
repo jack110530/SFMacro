@@ -7,6 +7,7 @@
 //
 
 #import "SFViewController.h"
+#import <SFMacro/SFMacro.h>
 
 @interface SFViewController ()
 

@@ -1,0 +1,27 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - SFMacro (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - SFMacro (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  SFMacro:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  SFMacro: e486ef75e7475aa10325ba46b6a9508f7d79922f
+
+PODFILE CHECKSUM: c500edc7d522ad64258620ff6503272c90e735e4
+
+COCOAPODS: 1.9.3

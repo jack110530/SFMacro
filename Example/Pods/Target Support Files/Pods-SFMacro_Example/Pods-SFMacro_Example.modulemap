@@ -1,0 +1,6 @@
+framework module Pods_SFMacro_Example {
+  umbrella header "Pods-SFMacro_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
