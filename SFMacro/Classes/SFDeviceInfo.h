@@ -23,6 +23,7 @@
 // <=
 #define SFSystemVersionIsLessThanOrEqualTo(v)       ([SFSystemVersion compare:v options:NSNumericSearch] != NSOrderedDescending)
 
+
 // MARK: 机型
 // 判断是否为iPhone
 #define SFIsIPhone          (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)

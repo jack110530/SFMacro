@@ -19,7 +19,7 @@
 
 
 // MARK: 懒加载
-#define SFLazyLoadCode(class, property, handle) \
+#define SFLazyLoad(class, property, handle) \
 - (class *)property {\
 if (!_##property) {\
 handle;\
@@ -28,10 +28,10 @@ return _##property;\
 }\
 
 // MARK: 字符串拼接
-#define SFStringFormatCode(fmt, ...) [NSString stringWithFormat:fmt, __VA_ARGS__]
+#define SFStringFormat(fmt, ...) [NSString stringWithFormat:fmt, __VA_ARGS__]
 
 // MARK: 本地化
-#define SFString(key) NSLocalizedStringFromTable(key, @"Localizable", nil)
+#define SFLocalizedString(key) NSLocalizedStringFromTable(key, @"Localizable", nil)
 
 // MARK: 判空处理
 //字符串是否为空

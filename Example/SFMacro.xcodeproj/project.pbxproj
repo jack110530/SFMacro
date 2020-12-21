@@ -247,6 +247,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = jack110530;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = JDYA65876X;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -494,6 +497,7 @@
 			baseConfigurationReference = 5636825683CC1C0F4E55C26B /* Pods-SFMacro_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JDYA65876X;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SFMacro/SFMacro-Prefix.pch";
 				INFOPLIST_FILE = "SFMacro/SFMacro-Info.plist";
@@ -510,6 +514,7 @@
 			baseConfigurationReference = 1A0DAF93D17B71750BE0B637 /* Pods-SFMacro_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JDYA65876X;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SFMacro/SFMacro-Prefix.pch";
 				INFOPLIST_FILE = "SFMacro/SFMacro-Info.plist";
