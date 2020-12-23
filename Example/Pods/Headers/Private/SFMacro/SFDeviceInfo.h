@@ -1,1 +1,0 @@
-../../../../../SFMacro/Classes/SFDeviceInfo.h

@@ -42,14 +42,14 @@
 
 
 // MARK: 屏幕尺寸
-#define SFScreenScale       getScreenScale()
-#define SFScreenSize        getScreenSize()
+#define SFScreenScale       [SFUtility getScreenScale]
+#define SFScreenSize        [SFUtility getScreenSize]
 #define SFScreenWidth       SFScreenSize.width
 #define SFScreenHeight      SFScreenSize.height
 
 
 // MARK: 页面高度
-#define SFStatusBarHeight       getStatusBarHeight()                 //状态栏高度
+#define SFStatusBarHeight       [SFUtility getStatusBarHeight]       //状态栏高度
 #define SFNavBarHeight          44.0                                 //导航栏高度
 #define SFTopHeight             (SFStatusBarHeight + SFNavBarHeight) // 导航栏+状态栏的高度
 #define SFSafeBottomHeight      (SFStatusBarHeight>20?34:0)          // 底部安全高度
@@ -67,47 +67,6 @@
 #define SFFontSize(value)                   (value*SFFontSizeScale)
 #define SFFont(value)                       [UIFont systemFontOfSize:SFFontSize(value)]
 #define SFFontBold(value)                   [UIFont boldSystemFontOfSize:SFFontSize(value)]
-
-
-
-#pragma mark - private func
-CGFloat getScreenScale() {
-    static CGFloat scale;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        scale = [UIScreen mainScreen].scale;
-    });
-    return scale;
-}
-
-CGSize getScreenSize() {
-    static CGSize size;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        size = [UIScreen mainScreen].bounds.size;
-        if (size.height < size.width) {
-            CGFloat tmp = size.height;
-            size.height = size.width;
-            size.width = tmp;
-        }
-    });
-    return size;
-}
-
-CGFloat getStatusBarHeight() {
-    static CGFloat statusBarHeight;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        if (@available(iOS 13.0, *)) {
-            UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager;
-            statusBarHeight = statusBarManager.statusBarFrame.size.height;
-        }
-        else {
-            statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
-        }
-    });
-    return statusBarHeight;
-}
 
 
 

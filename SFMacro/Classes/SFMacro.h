@@ -9,6 +9,7 @@
 #ifndef SFMacro_h
 #define SFMacro_h
 
+#import "SFUtility.h"
 #import "SFAppInfo.h"
 #import "SFDeviceInfo.h"
 #import "SFFunc.h"
