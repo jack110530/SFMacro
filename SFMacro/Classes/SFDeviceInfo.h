@@ -42,19 +42,19 @@
 
 
 // MARK: 屏幕尺寸
-#define SFScreenScale       [UIScreen mainScreen].scale
-#define SFScreenSize        [UIScreen mainScreen].bounds.size
+#define SFScreenScale       getScreenScale()
+#define SFScreenSize        getScreenSize()
 #define SFScreenWidth       SFScreenSize.width
 #define SFScreenHeight      SFScreenSize.height
 
 
 // MARK: 页面高度
-#define SFStatusBarHeight       [[UIApplication sharedApplication] statusBarFrame].size.height//状态栏高度
-#define SFNavBarHeight          44.0                                                //导航栏高度
-#define SFTopHeight             (SFStatusBarHeight + SFNavBarHeight)                // 导航栏+状态栏的高度
-#define SFSafeBottomHeight      (SFStatusBarHeight>20?34:0)                         // 底部安全高度
-#define SFTabBarHeight          49.0                                                // tabBar的高度
-#define SFBottomHeight          (SFSafeBottomHeight+SFTabBarHeight)                 // tabBar+底部安全的高度
+#define SFStatusBarHeight       getStatusBarHeight()                 //状态栏高度
+#define SFNavBarHeight          44.0                                 //导航栏高度
+#define SFTopHeight             (SFStatusBarHeight + SFNavBarHeight) // 导航栏+状态栏的高度
+#define SFSafeBottomHeight      (SFStatusBarHeight>20?34:0)          // 底部安全高度
+#define SFTabBarHeight          49.0                                 // tabBar的高度
+#define SFBottomHeight          (SFSafeBottomHeight+SFTabBarHeight)  // tabBar+底部安全的高度
 
 
 // MARK: 根据iPhone6为基准的缩放比例
@@ -70,6 +70,44 @@
 
 
 
+#pragma mark - private func
+CGFloat getScreenScale() {
+    static CGFloat scale;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        scale = [UIScreen mainScreen].scale;
+    });
+    return scale;
+}
+
+CGSize getScreenSize() {
+    static CGSize size;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        size = [UIScreen mainScreen].bounds.size;
+        if (size.height < size.width) {
+            CGFloat tmp = size.height;
+            size.height = size.width;
+            size.width = tmp;
+        }
+    });
+    return size;
+}
+
+CGFloat getStatusBarHeight() {
+    static CGFloat statusBarHeight;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (@available(iOS 13.0, *)) {
+            UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager;
+            statusBarHeight = statusBarManager.statusBarFrame.size.height;
+        }
+        else {
+            statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+        }
+    });
+    return statusBarHeight;
+}
 
 
 

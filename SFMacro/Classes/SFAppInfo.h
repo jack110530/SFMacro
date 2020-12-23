@@ -24,10 +24,28 @@
 
 
 #define SFApplication            [UIApplication sharedApplication]
-#define SFKeyWindow              SFApplication.keyWindow
+#define SFKeyWindow              getKeyWindow()
 #define SFAppDelegate            (AppDelegate *)SFApplication.delegate
 #define SFUserDefaults           [NSUserDefaults standardUserDefaults]
 #define SFNotificationCenter     [NSNotificationCenter defaultCenter]
+
+
+#pragma mark - private func
+
+UIWindow * getKeyWindow() {
+    UIWindow* window = nil;
+    if (@available(iOS 13.0, *)) {
+        for (UIWindowScene* windowScene in [UIApplication sharedApplication].connectedScenes) {
+            if (windowScene.activationState == UISceneActivationStateForegroundActive) {
+                window = windowScene.windows.lastObject;
+                break;
+            }
+        }
+    }else{
+        window = [UIApplication sharedApplication].keyWindow;
+    }
+    return window;
+}
 
 
 #endif /* SFAppInfo_h */
