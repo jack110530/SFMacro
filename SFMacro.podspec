@@ -31,6 +31,8 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'SFMacro/Classes/**/*'
+  s.public_header_files = 'SFBaseUI/Classes/SFMacro.h'
+  
   
   # s.resource_bundles = {
   #   'SFMacro' => ['SFMacro/Assets/*.png']
@@ -38,4 +40,5 @@ TODO: Add long description of the pod here.
 
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  
 end

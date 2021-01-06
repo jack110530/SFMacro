@@ -27,21 +27,55 @@ handle;\
 return _##property;\
 }\
 
+
 // MARK: 字符串拼接
 #define SFStringFormat(fmt, ...) [NSString stringWithFormat:fmt, __VA_ARGS__]
+
 
 // MARK: 本地化
 #define SFLocalizedString(key) NSLocalizedStringFromTable(key, @"Localizable", nil)
 
+
 // MARK: 判空处理
-//字符串是否为空
+// 字符串是否为空
 #define SFStringIsEmpty(str) ([str isEqualToString:@"null"] || [str isEqualToString:@"Null"] || [str isKindOfClass:[NSNull class]] || str == nil || [str length] < 1 ? YES : NO )
-//数组是否为空
+// 数组是否为空
 #define SFArrayIsEmpty(array) (array == nil || [array isKindOfClass:[NSNull class]] || array.count == 0)
-//字典是否为空
+// 字典是否为空
 #define SFDictIsEmpty(dic) (dic == nil || [dic isKindOfClass:[NSNull class]] || dic.allKeys == 0)
-//是否是空对象
+// 是否是空对象
 #define SFObjectIsEmpty(_object) (_object == nil || [_object isKindOfClass:[NSNull class]] || ([_object respondsToSelector:@selector(length)] && [(NSData *)_object length] == 0) || ([_object respondsToSelector:@selector(count)] && [(NSArray *)_object count] == 0))
+
+
+// MARK: weakself & strongself
+// 弱引用
+#undef  SFWeak
+#define SFWeak(...)     @weakify(__VA_ARGS__)
+#define SFWeakSelf      SFWeak(self);
+// 强引用
+#undef  SFStrong
+#define SFStrong(...)   @strongify(__VA_ARGS__)
+#define SFStrongSelf    SFStrong(self);
+
+
+// MARK: 字体
+#define SFFontSizeScale         (SFIsIPhone6Plus ? 1.2 : 1.0)
+#define SFFontSize(value)       (value*SFFontSizeScale)
+#define SFFont(value)           [UIFont systemFontOfSize:SFFontSize(value)]
+#define SFFontBold(value)       [UIFont boldSystemFontOfSize:SFFontSize(value)]
+#define SFFontRegular(value)    [UIFont fontWithName:@"PingFangTC-Regular" size:SFFontSize(value)]
+#define SFFontThin(value)       [UIFont fontWithName:@"PingFangTC-Thin" size:SFFontSize(value)]
+#define SFFontMedium(value)     [UIFont fontWithName:@"PingFangTC-Medium" size:SFFontSize(value)]
+#define SFFontSemibold(value)   [UIFont fontWithName:@"PingFangTC-Semibold" size:SFFontSize(value)]
+#define SFFontLight(value)      [UIFont fontWithName:@"PingFangTC-Light" size:SFFontSize(value)]
+#define SFFontUltralight(value) [UIFont fontWithName:@"PingFangTC-Ultralight" size:SFFontSize(value)]
+
+
+// MARK: 颜色
+// 注意：这个宏，依赖于YYCategory
+#define SFColorHex(value)       [UIColor colorWithHexString:value]
+
+
 
 // MARK: 单例写法
 #define SFSingleton_h(name)  +(instancetype)shared##name;

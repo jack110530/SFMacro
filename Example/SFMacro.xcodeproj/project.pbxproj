@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		1A0DAF93D17B71750BE0B637 /* Pods-SFMacro_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFMacro_Example.release.xcconfig"; path = "Target Support Files/Pods-SFMacro_Example/Pods-SFMacro_Example.release.xcconfig"; sourceTree = "<group>"; };
-		5142613C763A3321788F3AC9 /* SFMacro.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SFMacro.podspec; path = ../SFMacro.podspec; sourceTree = "<group>"; };
+		5142613C763A3321788F3AC9 /* SFMacro.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SFMacro.podspec; path = ../SFMacro.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5636825683CC1C0F4E55C26B /* Pods-SFMacro_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFMacro_Example.debug.xcconfig"; path = "Target Support Files/Pods-SFMacro_Example/Pods-SFMacro_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		57EA5E0F8DF13FE5D427C0D7 /* Pods_SFMacro_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SFMacro_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		583CF77C53D81276E93BB5E8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };

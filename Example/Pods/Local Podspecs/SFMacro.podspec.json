@@ -18,5 +18,6 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "SFMacro/Classes/**/*"
+  "source_files": "SFMacro/Classes/**/*",
+  "public_header_files": "SFBaseUI/Classes/SFMacro.h"
 }

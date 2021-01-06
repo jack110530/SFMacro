@@ -62,12 +62,5 @@
 #define SFHeightScaleByIphone6(height)     (height*(SFScreenHeight/667.0f))
 
 
-// MARK: 字体大小
-#define SFFontSizeScale                     (SFIsIPhone6Plus ? 1.2 : 1.0)
-#define SFFontSize(value)                   (value*SFFontSizeScale)
-#define SFFont(value)                       [UIFont systemFontOfSize:SFFontSize(value)]
-#define SFFontBold(value)                   [UIFont boldSystemFontOfSize:SFFontSize(value)]
-
-
 
 #endif /* SFDeviceInfo_h */
